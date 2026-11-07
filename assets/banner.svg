@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="50%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#080e1c"/>
+    </linearGradient>
+
+    <radialGradient id="meshCyan" cx="20%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="meshGreen" cx="80%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#217346" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="meshBlue" cx="50%" cy="85%" r="45%">
+      <stop offset="0%" stop-color="#0078d4" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0078d4" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+
+    <linearGradient id="tagGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)"/>
+  <rect width="1200" height="420" rx="16" fill="url(#meshCyan)"/>
+  <rect width="1200" height="420" rx="16" fill="url(#meshGreen)"/>
+  <rect width="1200" height="420" rx="16" fill="url(#meshBlue)"/>
+
+  <!-- Subtle Topology Graph Grid Background -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="420"/>
+    <line x1="300" y1="0" x2="300" y2="420"/>
+    <line x1="500" y1="0" x2="500" y2="420"/>
+    <line x1="700" y1="0" x2="700" y2="420"/>
+    <line x1="900" y1="0" x2="900" y2="420"/>
+    <line x1="1100" y1="0" x2="1100" y2="420"/>
+    <line x1="0" y1="70" x2="1200" y2="70"/>
+    <line x1="0" y1="140" x2="1200" y2="140"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="280" x2="1200" y2="280"/>
+    <line x1="0" y1="350" x2="1200" y2="350"/>
+  </g>
+
+  <!-- Stylized Network Topology Diagram Wire Routing (Right Side) -->
+  <g opacity="0.85">
+    <!-- Orthogonal Bus Links -->
+    <path d="M 850 90 L 850 160 L 980 160 L 980 230" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6,4"/>
+    <path d="M 850 90 L 850 160 L 750 160 L 750 230" fill="none" stroke="#217346" stroke-width="2.5"/>
+    <path d="M 750 230 L 750 280 L 680 280 L 680 340" fill="none" stroke="#6366f1" stroke-width="2"/>
+    <path d="M 750 230 L 750 280 L 820 280 L 820 340" fill="none" stroke="#6366f1" stroke-width="2"/>
+    <path d="M 980 230 L 980 280 L 920 280 L 920 340" fill="none" stroke="#6366f1" stroke-width="2"/>
+    <path d="M 980 230 L 980 280 L 1050 280 L 1050 340" fill="none" stroke="#6366f1" stroke-width="2"/>
+
+    <!-- Nodes -->
+    <!-- Tier 1 Core Node -->
+    <rect x="790" y="65" width="120" height="48" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
+    <text x="850" y="95" fill="#f8fafc" font-family="Segoe UI, -apple-system, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">CORE-SW-01</text>
+
+    <!-- Tier 2 Distribution Nodes -->
+    <rect x="690" y="205" width="120" height="48" rx="8" fill="#1e293b" stroke="#217346" stroke-width="2"/>
+    <text x="750" y="235" fill="#f8fafc" font-family="Segoe UI, -apple-system, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">DIST-SW-01</text>
+
+    <rect x="920" y="205" width="120" height="48" rx="8" fill="#1e293b" stroke="#217346" stroke-width="2"/>
+    <text x="980" y="235" fill="#f8fafc" font-family="Segoe UI, -apple-system, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">DIST-SW-02</text>
+
+    <!-- Tier 3 Access Nodes -->
+    <rect x="635" y="325" width="90" height="36" rx="6" fill="#0f172a" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="680" y="348" fill="#cbd5e1" font-family="Segoe UI, -apple-system, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">ACC-SW-01</text>
+
+    <rect x="775" y="325" width="90" height="36" rx="6" fill="#0f172a" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="820" y="348" fill="#cbd5e1" font-family="Segoe UI, -apple-system, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">ACC-SW-02</text>
+
+    <rect x="875" y="325" width="90" height="36" rx="6" fill="#0f172a" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="920" y="348" fill="#cbd5e1" font-family="Segoe UI, -apple-system, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">ACC-SW-03</text>
+
+    <rect x="1005" y="325" width="90" height="36" rx="6" fill="#0f172a" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="1050" y="348" fill="#cbd5e1" font-family="Segoe UI, -apple-system, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">ACC-SW-04</text>
+  </g>
+
+  <!-- Title & Branding Information (Left Side) -->
+  <g transform="translate(80, 110)">
+    <!-- Badge Pill -->
+    <rect x="0" y="0" width="280" height="30" rx="15" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1"/>
+    <text x="140" y="19" fill="#38bdf8" font-family="Segoe UI, -apple-system, sans-serif" font-size="11.5" font-weight="700" letter-spacing="1.2" text-anchor="middle">ENTERPRISE NETWORK AUTOMATION</text>
+
+    <!-- Main Title -->
+    <text x="0" y="85" fill="url(#titleGrad)" font-family="Segoe UI, -apple-system, sans-serif" font-size="52" font-weight="800" letter-spacing="-1">Visio Creator</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="130" fill="url(#tagGrad)" font-family="Segoe UI, -apple-system, sans-serif" font-size="20" font-weight="600">Deterministic Topology &amp; Native Visio (.vsdx) Generator</text>
+
+    <!-- Body Bullets -->
+    <text x="0" y="172" fill="#94a3b8" font-family="Segoe UI, -apple-system, sans-serif" font-size="14.5" font-weight="400">
+      <tspan x="0" dy="0">• Ingests Cisco backups, CDP/LLDP tables &amp; Excel inventories</tspan>
+      <tspan x="0" dy="24">• Non-overlapping orthogonal Manhattan wire routing</tspan>
+      <tspan x="0" dy="24">• Pure OpenXML vector export with zero Microsoft Visio installation dependency</tspan>
+    </text>
+
+    <!-- Version & Licensing Tags -->
+    <g transform="translate(0, 240)">
+      <rect x="0" y="0" width="130" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="65" y="17" fill="#f8fafc" font-family="Segoe UI, -apple-system, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">Closed Source Freeware</text>
+
+      <rect x="140" y="0" width="125" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="202" y="17" fill="#38bdf8" font-family="Segoe UI, -apple-system, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">.NET 10 · Avalonia UI</text>
+
+      <rect x="275" y="0" width="140" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="345" y="17" fill="#34d399" font-family="Segoe UI, -apple-system, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">Cross-Platform Ready</text>
+    </g>
+  </g>
+</svg>
